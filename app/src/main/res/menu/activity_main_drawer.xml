@@ -3,33 +3,41 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import"/>
+            android:id="@+id/nav_symptom"
+            android:icon="@drawable/ic_search"
+            android:title="Search by Symptom"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:id="@+id/nav_city"
+            android:icon="@drawable/ic_search"
+            android:title="Search by City"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
+            android:id="@+id/nav_specialty"
+            android:icon="@drawable/ic_search"
+            android:title="Search by Specialty"/>
+        <item
+            android:id="@+id/nav_wiki"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Medical Wiki"/>
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_alarm"
+            android:title="Set Medication Reminder"/>
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools"/>
+            android:icon="@drawable/ic_navigation"
+            android:title="Locate Pharmacies"/>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="ConnectUs Info">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
+                android:icon="@android:drawable/ic_menu_my_calendar"
+                android:title="View Calendar"/>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send"/>
+                android:title="Email"/>
         </menu>
     </item>
 
