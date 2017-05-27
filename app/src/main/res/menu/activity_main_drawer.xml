@@ -5,7 +5,8 @@
         <item
             android:id="@+id/nav_symptom"
             android:icon="@drawable/ic_search"
-            android:title="Search by Symptom"/>
+            android:title="Search by Symptom"
+            android:checked="true"/>
         <item
             android:id="@+id/nav_city"
             android:icon="@drawable/ic_search"
