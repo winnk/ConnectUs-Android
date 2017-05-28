@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".FindDoctorActivity">
         </activity>
+        <activity android:name=".SearchSelect">
+        </activity>
     </application>
 
 </manifest>
