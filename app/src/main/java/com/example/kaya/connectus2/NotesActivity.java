@@ -26,7 +26,7 @@ protected void onCreate(Bundle savedInstanceState) {
         @Override
         public void onClick(View v) {
             if (mNoteEditText.getText().toString().trim().length() > 0) {
-                Toast.makeText(NotesActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NotesActivity.this, "You did not enter any text", Toast.LENGTH_SHORT).show();
                 return;
             }
             Intent intent = new Intent(NotesActivity.this, NotesListActivity.class);
