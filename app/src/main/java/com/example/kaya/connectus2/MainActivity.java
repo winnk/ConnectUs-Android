@@ -4,23 +4,25 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
-
-private ImageButton mSymptomSearchButton;
-private ImageButton mReminderButton;
-private ImageButton mNoteButton;
-private ImageButton mCalendarButton;
+    @Bind(R.id.symptomSearchButton) ImageButton mSymptomSearchButton;
+    @Bind(R.id.noteButton) ImageButton mNoteButton;
+    @Bind(R.id.calendarButton) ImageButton mCalendarButton;
+    @Bind(R.id.reminderButton) ImageButton mReminderButton;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    mSymptomSearchButton = (ImageButton) findViewById(R.id.symptomSearchButton);
+    ButterKnife.bind(this);
+
+
     mSymptomSearchButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -29,7 +31,7 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 
-    mReminderButton = (ImageButton) findViewById(R.id.reminderButton);
+
     mReminderButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -38,7 +40,7 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 
-    mNoteButton = (ImageButton) findViewById(R.id.noteButton);
+
     mNoteButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -47,7 +49,7 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 
-    mCalendarButton = (ImageButton) findViewById(R.id.calendarButton);
+
     mCalendarButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {

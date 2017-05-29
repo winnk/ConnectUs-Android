@@ -19,7 +19,9 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/questionButton"/>
+        app:layout_constraintBottom_toTopOf="@+id/questionButton"
+
+    />
 
 
     <EditText
@@ -28,11 +30,12 @@
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textNoSuggestions"
         android:text="Enter note"
         tools:layout_editor_absoluteX="8dp"
         android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/saveNoteButton"/>
+        app:layout_constraintBottom_toTopOf="@+id/saveNoteButton"
+       />
 
     <Button
         android:id="@+id/saveNoteButton"
@@ -44,7 +47,8 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
     <RadioButton
         android:id="@+id/symptomButton"

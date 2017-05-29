@@ -26,6 +26,10 @@
         </activity>
         <activity android:name=".FindDoctorActivity">
         </activity>
+        <activity android:name=".SearchSelect">
+        </activity>
+        <activity android:name=".NotesListActivity">
+        </activity>
     </application>
 
 </manifest>
