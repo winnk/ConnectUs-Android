@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ConnectUs2</string>
+    <string name="invalid_note">Must have text to save</string>
+    <string name="noteText">Please enter a valid Name</string>
 </resources>
