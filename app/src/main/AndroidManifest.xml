@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.kaya.connectus2">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,26 +10,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".ui.SymptomListActivity">
         </activity>
-        <activity android:name=".ReminderActivity">
+        <activity android:name=".ui.ReminderActivity">
         </activity>
-        <activity android:name=".NotesActivity">
+        <activity android:name=".ui.NotesActivity">
         </activity>
-        <activity android:name=".CalendarActivity">
+        <activity android:name=".ui.CalendarActivity">
         </activity>
-        <activity android:name=".FindDoctorActivity">
+        <activity android:name=".ui.FindDoctorActivity">
         </activity>
-        <activity android:name=".SearchSelect">
+        <activity android:name=".ui.SearchSelect">
         </activity>
-        <activity android:name=".NotesListActivity">
+        <activity android:name=".ui.NotesListActivity">
         </activity>
     </application>
 

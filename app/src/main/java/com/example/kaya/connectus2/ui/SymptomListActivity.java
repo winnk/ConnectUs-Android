@@ -1,4 +1,4 @@
-package com.example.kaya.connectus2;
+package com.example.kaya.connectus2.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter;
 
 import android.widget.ListView;
 
-public class SearchActivity extends AppCompatActivity {
+import com.example.kaya.connectus2.R;
+
+public class SymptomListActivity extends AppCompatActivity {
 
     private ListView mListView;
     private String[] symptoms = new String[]{"bleeding","bruising","chills and shivering","convulsions","deformity","discharge","dizziness","dry mouth ","epistaxis","fatigue","hyperthermia","hypothermia","jaundice", "loss of appetite","muscle cramps","muscle weakness","pain - abdominal","pain - chest ","pyrexia","swelling","syncope","tinnitus","tremor","weight gain","weight loss" };

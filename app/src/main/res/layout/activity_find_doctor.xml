@@ -5,26 +5,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kaya.connectus2.FindDoctorActivity">
+    tools:context="com.example.kaya.connectus2.ui.FindDoctorActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Returned Dr Search Results"
-        tools:layout_editor_absoluteX="107dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="102dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.226"/>
+        android:layout_marginTop="8dp"
+        android:text="Searched by ..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        tools:layout_editor_absoluteX="79dp"/>
 
     <TextView
         android:id="@+id/symptomTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Placeholder"
-        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteX="170dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="0dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="searchString"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        tools:layout_editor_absoluteX="186dp"/>
 </android.support.constraint.ConstraintLayout>

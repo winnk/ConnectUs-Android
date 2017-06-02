@@ -1,7 +1,9 @@
-package com.example.kaya.connectus2;
+package com.example.kaya.connectus2.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.kaya.connectus2.R;
 
 public class NotesListActivity extends AppCompatActivity {
 
