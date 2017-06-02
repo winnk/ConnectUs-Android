@@ -9,9 +9,10 @@ private String mLocation_slug;
 private String mTitle;
 private String mName;
 private String mPracticeName;
+private String mBio;
 
 
-public Doctor(String firstName, String lastName, String uid, String location_slug, String title, String name, String practiceName) {
+public Doctor(String firstName, String lastName, String uid, String location_slug, String title, String name, String practiceName, String bio) {
     this.mFirstName = firstName;
     this.mLastName = lastName;
     this.mUid = uid;
@@ -19,6 +20,7 @@ public Doctor(String firstName, String lastName, String uid, String location_slu
     this.mTitle = title;
     this.mName = name;
     this.mPracticeName = practiceName;
+    this.mBio = bio;
 
 }
 
@@ -44,6 +46,9 @@ public String getTitle() {
 
 public String getPracticeName() {
     return mPracticeName;
+}
+public String getBio() {
+    return mBio;
 }
 }
 

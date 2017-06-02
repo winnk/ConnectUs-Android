@@ -6,10 +6,8 @@ import com.example.kaya.connectus2.model.Doctor;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Call;
@@ -48,8 +46,9 @@ public ArrayList<Doctor> processResults(Response response) {
             String practiceName = doctorJson.getJSONObject("practices").getString("practiceName");
             String firstName = doctorJson.getJSONArray("profile").getJSONObject(0).getString("first_name");
             String lastName = doctorJson.getJSONArray("profile").getJSONObject(0).getString("last_name");
+            String bio = doctorJson.getJSONArray("profile").getJSONObject(0).getString("bio");
 
-            Doctor instanceOf = new Doctor(firstName, lastName, name, uid, location_slug, title, practiceName);
+            Doctor instanceOf = new Doctor(firstName, lastName, name, uid, location_slug, title, practiceName, bio);
             doctor.add(instanceOf);
         }
     } catch (IOException e) {
