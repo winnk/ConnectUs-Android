@@ -8,9 +8,15 @@
     tools:context="com.example.kaya.connectus2.ui.SymptomListActivity">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/symptomRecyclerView"/>
+    <ListView
+        android:id="@+id/symptomsListView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
 
 </android.support.constraint.ConstraintLayout>
