@@ -5,11 +5,11 @@
               android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/doctorImageView"
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:id="@+id/restaurantImageView"
-        android:src="@drawable/searchdoctor"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/searchdoctor"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -28,28 +28,23 @@
             android:textColor="@color/colorPrimary"/>
 
         <TextView
+            android:id="@+id/practiceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Practice Name"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/firstNameTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/firstNameTextView"
+            android:text="Practice Name"
             android:textStyle="italic"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bio"
+            android:id="@+id/bioTextView"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="bio"
-                android:id="@+id/bioTextView"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
-        </RelativeLayout>
+
+
     </LinearLayout>
 
 </LinearLayout>

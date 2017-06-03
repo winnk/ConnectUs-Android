@@ -1,9 +1,7 @@
 package com.example.kaya.connectus2.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 
 import android.widget.ListView;
@@ -18,7 +16,7 @@ public class SymptomListActivity extends AppCompatActivity {
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_search);
+    setContentView(R.layout.activity_symptomList);
 
 
     mListView = (ListView) findViewById(R.id.symptomsListView);
