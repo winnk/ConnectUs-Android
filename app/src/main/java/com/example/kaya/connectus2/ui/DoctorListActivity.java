@@ -68,9 +68,7 @@ public class DoctorListActivity extends AppCompatActivity {
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
-
-                    ;
-                });
+                 });
             }
         });
     }

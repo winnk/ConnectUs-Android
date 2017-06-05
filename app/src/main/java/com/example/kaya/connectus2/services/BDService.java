@@ -46,17 +46,9 @@ public ArrayList<Doctor> processResults(Response response) {
         if (response.isSuccessful()) {
 
             JSONObject bdJSON = new JSONObject(jsonData); //API response
-
-            JSONArray dataList = (JSONArray) bdJSON.get("data"); // contains one data object
-            JSONObject practiceArrObject = dataList.getJSONObject(0); // contains on out array to Practices
-
-            for (int i = 0; i < dataList.length(); i++) {
-                JSONObject doctorJSON = dataList.getJSONObject(i);
-                String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
-                String location_slug = doctorJSON.getJSONObject("practices").getString("location_slug");
-                String practiceName = doctorJSON.getJSONObject("practices").getString("practiceName");
-                String uid = doctorJSON.getJSONObject("practices").getString("uid");
-
+            JSONArray practicesArray = (JSONArray) bdJSON.get("practices");
+            for (int i = 0; i < practicesArray.length(); i++) {
+                JSONObject doctorJSON = practicesArray.getJSONObject(i);
                 String title = doctorJSON.getString("title");
 
                 String firstName = doctorJSON.getString("first_name");
