@@ -10,18 +10,27 @@ private String mTitle;
 private String mName;
 private String mPracticeName;
 private String mBio;
+private String mImageUrl;
 
 
-public Doctor(String firstName, String lastName, String uid, String location_slug, String title, String name, String practiceName, String bio) {
+public Doctor(String firstName, String lastName, String title, String bio, String url) {
     this.mFirstName = firstName;
     this.mLastName = lastName;
-    this.mUid = uid;
-    this.mLocation_slug = location_slug;
+    //this.mUid = uid;
+    //this.mLocation_slug = location_slug;
     this.mTitle = title;
-    this.mName = name;
-    this.mPracticeName = practiceName;
+   // this.mName = name;
+    //this.mPracticeName = practiceName;
     this.mBio = bio;
+    this.mImageUrl = url;
 
+}
+
+public String getmFirstName(){
+    return mFirstName;
+}
+public String getmLastName(){
+    return mLastName;
 }
 
 public String getmName() {
@@ -32,10 +41,14 @@ public String getName() {
     return mName;
 }
 
+
 public String getUid() {
     return mUid;
 }
 
+public String getImageUrl(){
+    return mImageUrl;
+}
 public String getLocation() {
     return mLocation_slug;
 }

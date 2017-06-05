@@ -34,8 +34,8 @@ protected void onCreate(Bundle savedInstanceState) {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             String symptom = ((TextView) view).getText().toString();
             Intent intent = new Intent(SymptomListActivity.this, DoctorListActivity.class);
-            intent.putExtra("params", symptom);
-            intent.putExtra("parent", "symptom");
+            intent.putExtra("symptom", symptom);
+            //intent.putExtra("parent", "symptom");
             startActivity(intent);
         }
     });

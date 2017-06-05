@@ -3,6 +3,7 @@ package com.example.kaya.connectus2.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,39 +22,40 @@ import okhttp3.Response;
 
 public class DoctorListActivity extends AppCompatActivity {
 
-    @Bind(R.id.textView6) TextView mTextView;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.textView6) TextView mTextView;
     private DoctorListAdapter mAdapter;
 
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
-    private String parentString;
-
+//    private String parentString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("onCreate", "does run");
         setContentView(R.layout.activity_find_doctor);
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String searchSymptom = intent.getStringExtra("params");
-        parentString = intent.getStringExtra("parent");
+        String symptom = intent.getStringExtra("symptom");
 
-        mTextView.setText("Results for \"" + searchSymptom + "\"");
-        getDoctors(searchSymptom);
+        mTextView.setText("Results for \"" + symptom + "\"");
+        getDoctors(symptom);
     }
 
-    private void getDoctors(String searchSymptom){
-
+    private void getDoctors(String symptom){
+        Log.d("getDoctor", "runs");
         final BDService bdService = new BDService();
-        BDService.findBySymptom(searchSymptom, new Callback(){
+
+        BDService.findBySymptom(symptom, new Callback(){
 
             @Override
             public void onFailure(Call call, IOException e) { e.printStackTrace(); }
 
             @Override
             public void onResponse(Call call, Response response) {
+                Log.d("onResponse", "runs");
                 mDoctors = bdService.processResults(response);
 
                 DoctorListActivity.this.runOnUiThread(new Runnable() {

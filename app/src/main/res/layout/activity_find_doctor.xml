@@ -7,18 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.kaya.connectus2.ui.DoctorListActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Searched by ..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        tools:layout_editor_absoluteX="79dp"/>
-
 
     <TextView
         android:id="@+id/textView6"
