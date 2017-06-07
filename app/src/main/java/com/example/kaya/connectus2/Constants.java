@@ -1,4 +1,4 @@
-package com.example.kaya.connectus2.ui;
+package com.example.kaya.connectus2;
 
 import com.example.kaya.connectus2.BuildConfig;
 
