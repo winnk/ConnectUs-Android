@@ -22,8 +22,10 @@ import okhttp3.Response;
 
 public class DoctorListActivity extends AppCompatActivity {
 
+    //@Bind(R.id.textView6) TextView mTextView;
+    public static final String TAG = DoctorListActivity.class.getSimpleName();
+
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    @Bind(R.id.textView6) TextView mTextView;
     private DoctorListAdapter mAdapter;
 
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
@@ -40,7 +42,7 @@ public class DoctorListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String symptom = intent.getStringExtra("symptom");
 
-        mTextView.setText("Results for \"" + symptom + "\"");
+       // mTextView.setText("Results for \"" + symptom + "\"");
         getDoctors(symptom);
     }
 
@@ -67,6 +69,7 @@ public class DoctorListActivity extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DoctorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
+
                     }
                  });
             }

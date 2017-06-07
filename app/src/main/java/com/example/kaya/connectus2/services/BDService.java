@@ -52,7 +52,7 @@ public ArrayList<Doctor> processResults(Response response) {
             for (int i = 0; i < bdArray.length(); i++) {
                 JSONObject doctorJSON = bdArray.getJSONObject(i);
                 String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
-             
+
 
                 ArrayList<String> phone = new ArrayList<>();
                 JSONArray phoneJSON = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");

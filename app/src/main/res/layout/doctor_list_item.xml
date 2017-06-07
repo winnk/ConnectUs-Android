@@ -3,68 +3,42 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/firstNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="151dp"
+        android:layout_weight="0.26"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/doctorImageView"
+        android:layout_marginLeft="0dp"/>
+
+    <TextView
+        android:id="@+id/practiceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_weight="0.14"
+        android:textColor="@android:color/black"
+        tools:layout_editor_absoluteX="121dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameTextView"/>
 
     <ImageView
         android:id="@+id/doctorImageView"
-        android:layout_width="108dp"
-        android:layout_height="96dp"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/searchdoctor"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="250dp"/>
-
-        <TextView
-            android:id="@+id/firstNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Physician Name"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/practiceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/firstNameTextView"
-            android:text="Practice Name"
-            android:textStyle="italic"
-            tools:layout_editor_absoluteX="16dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/firstNameTextView"/>
-
-        <TextView
-            android:id="@+id/bioTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="bio"
-            tools:layout_editor_absoluteX="16dp"
-            android:layout_marginTop="29dp"
-            app:layout_constraintTop_toBottomOf="@+id/doctorImageView"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="-114dp"
-        tools:layout_editor_absoluteY="-78dp"/>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="78dp"/>
-
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

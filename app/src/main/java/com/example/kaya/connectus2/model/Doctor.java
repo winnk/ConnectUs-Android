@@ -26,15 +26,11 @@ public Doctor(String firstName, String lastName, String title, String bio, Strin
 
 }
 
-public String getmFirstName(){
+public String getFirstName(){
     return mFirstName;
 }
-public String getmLastName(){
+public String getLastName(){
     return mLastName;
-}
-
-public String getmName() {
-    return mName;
 }
 
 public String getName() {
