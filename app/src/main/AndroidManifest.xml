@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.kaya.connectus2">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,26 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
+        </activity>
+        <activity android:name=".ui.SymptomListActivity">
+        </activity>
+        <activity android:name=".ui.ReminderActivity">
+        </activity>
+        <activity android:name=".ui.NotesActivity">
+        </activity>
+        <activity android:name=".ui.CalendarActivity">
+        </activity>
+        <activity android:name=".ui.DoctorListActivity">
+        </activity>
+        <activity android:name=".ui.SearchSelect">
+        </activity>
+        <activity android:name=".ui.NotesListActivity">
+        </activity>
+        <activity android:name=".ui.CreateAccountActivity">
+        </activity>
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity">
-        </activity>
-        <activity android:name=".ReminderActivity">
-        </activity>
-        <activity android:name=".NotesActivity">
-        </activity>
-        <activity android:name=".CalendarActivity">
-        </activity>
-        <activity android:name=".FindDoctorActivity">
-        </activity>
-        <activity android:name=".SearchSelect">
-        </activity>
-        <activity android:name=".NotesListActivity">
+        <activity android:name=".ui.DoctorProfileActivity">
+
         </activity>
     </application>
 

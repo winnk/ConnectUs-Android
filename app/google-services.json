@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "862430979694",
+    "firebase_url": "https://connectus-4005c.firebaseio.com",
+    "project_id": "connectus-4005c",
+    "storage_bucket": "connectus-4005c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862430979694:android:9e38e13585d5709f",
+        "android_client_info": {
+          "package_name": "com.example.kaya.connectus2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862430979694-7adun3skb8ie9ofv09miu16vg65rtele.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kaya.connectus2",
+            "certificate_hash": "174a2a1c897fdff4ec1b4d57e7c6943d132b8700"
+          }
+        },
+        {
+          "client_id": "862430979694-13i052cu5ot68v8e65n7cp1kt34rp628.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrtuoYEpGr-hQIn39zFBOE2s9yw1l2w_8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862430979694-13i052cu5ot68v8e65n7cp1kt34rp628.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

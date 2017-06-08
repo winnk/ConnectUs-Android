@@ -1,13 +1,15 @@
-package com.example.kaya.connectus2;
+package com.example.kaya.connectus2.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SearchSelect extends AppCompatActivity {
+import com.example.kaya.connectus2.R;
+
+public class CalendarActivity extends AppCompatActivity {
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_search_select);
+    setContentView(R.layout.activity_calendar);
 }
 }

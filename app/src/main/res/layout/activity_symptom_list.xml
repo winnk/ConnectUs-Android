@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kaya.connectus2.SearchActivity">
+    tools:context="com.example.kaya.connectus2.ui.SymptomListActivity">
 
 
     <ListView
@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/symptomsTextView"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp"/>
 
