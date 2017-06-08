@@ -14,18 +14,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="319dp"
-        android:layout_height="390dp"
+        android:layout_width="324dp"
+        android:layout_height="490dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336"
-        tools:layout_editor_absoluteX="36dp">
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="5dp">
 
         <EditText
             android:id="@+id/emailEditText"
@@ -71,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="New user? Create Account here"
+            android:text="New user? Click to create ccount"
             android:textColor="@color/colorTextIcons"
             android:textSize="15sp"
             android:textStyle="bold"/>
