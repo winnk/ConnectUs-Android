@@ -45,9 +45,12 @@ protected void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onClick(View v) {
-    if (v == mSaveNoteButton) {
-        String note = mNoteBodyET.getText().toString();
 
+
+    if (v == mSaveNoteButton) {
+
+        String note = mNoteBodyET.getText().toString();
+        boolean validNote = isValidNote(note);
         saveNoteToFirebase(note);
 
         Intent intent = new Intent(NotesActivity.this, NotesListActivity.class);
@@ -59,6 +62,14 @@ public void onClick(View v) {
 public void saveNoteToFirebase(String note) {
     mFirebaseNoteBody.push().setValue(note);
     }
+
+private boolean isValidNote(String note) {
+    if (note.equals("")) {
+        mNoteBodyET.setError("Please enter a note");
+        return false;
+    }
+    return true;
+}
 
 }
 

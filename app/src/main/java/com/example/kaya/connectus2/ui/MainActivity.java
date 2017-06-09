@@ -1,6 +1,7 @@
 package com.example.kaya.connectus2.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.kaya.connectus2.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.noteButton) ImageButton mNoteButton;
     @Bind(R.id.calendarButton) ImageButton mCalendarButton;
     @Bind(R.id.reminderButton) ImageButton mReminderButton;
+    @Bind(R.id.mainTitleTV) TextView mMainTitleTV;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_main);
 
     ButterKnife.bind(this);
+
+    mMainTitleTV = (TextView) findViewById(R.id.mainTitleTV);
+    Typeface vanishFont = Typeface.createFromAsset(getAssets(), "fonts/vanish.ttf");
+    mMainTitleTV.setTypeface(vanishFont);
 
 
     mSymptomSearchButton.setOnClickListener(new View.OnClickListener() {

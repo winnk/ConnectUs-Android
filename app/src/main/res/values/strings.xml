@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ConnectUs2</string>
+    <string name="app_name">ConnectUs</string>
     <string name="invalid_note">Must have text to save</string>
     <string name="noteText">Please enter a valid Name</string>
     <string name="lorem">Lorem ipsum dolor sit amet, lectus sapien nulla egestas euismod, magna purus cursus facilisi. Donec metus vestibulum justo, tellus parturient ante vestibulum, volutpat nec blandit ligula ut. Purus pellentesque nisl nulla, non ipsum ac ut, amet varius tempus lorem. Pellentesque in facilisis rhoncus, maecenas sed lorem gravida turpis, ut volutpat sed nec eros. Ut sed ligula ut, class vel lorem vel et, neque feugiat nec augue maecenas, pede elit class ridiculus quisque. Suscipit eros urna metus, debitis sit interdum faucibus, venenatis vestibulum et consequat pellentesque, quisque nec lacus volutpat ante. Felis sed mauris sollicitudin magna, eleifend sollicitudin tellus porta pellentesque, nec ridiculus congue quis, scelerisque et mus vitae lacus.</string>
