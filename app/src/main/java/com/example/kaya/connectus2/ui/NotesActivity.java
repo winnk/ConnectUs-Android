@@ -38,11 +38,6 @@ private DatabaseReference mFirebaseNoteBody;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 
-    mFirebaseNoteBody = FirebaseDatabase
-            .getInstance()
-            .getReference()
-            .child(Constants.FB_NOTE_BODY);
-
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_notes);
     ButterKnife.bind(this);
@@ -59,7 +54,7 @@ public void onClick(View v) {
 
 // Calls validator
         InputValidatorHelper inputValidatorHelper = new InputValidatorHelper();
-        StringBuilder errMsg = new StringBuilder("Unable to save. ");
+        StringBuilder errMsg = new StringBuilder("Unable to save ");
 
 //Validate and Save
         boolean allowSave = true;
@@ -73,7 +68,7 @@ public void onClick(View v) {
         }
 
         if(allowSave){
-            //Proceeds with save logic
+//Proceeds with save logic
 
             Note note = new Note(noteBody, noteTitle);
 
@@ -82,27 +77,29 @@ public void onClick(View v) {
 
             DatabaseReference noteRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FB_CHILD_NOTES)
+                    .getReference(Constants.FIREBASE_CHILD_NOTES)
                     .child(uid);
 
             DatabaseReference pushRef = noteRef.push();
             String pushId = pushRef.getKey();
             note.setPushId(pushId);
             pushRef.setValue(note);
-
+            Log.d("saved:", noteTitle);
             Toast.makeText(NotesActivity.this, "Saved", Toast.LENGTH_SHORT).show();
-            ResetFields();
+          //  ResetFields();
 
             Intent intent = new Intent(NotesActivity.this, NotesListActivity.class);
-            Log.d("notes save", noteBody);
             startActivity(intent);
         }
     }
 }
+
 public void ResetFields() {
     mNoteBodyET.setText("");
     mNoteTitle.setText("");
 }
 }
+
+
 
 

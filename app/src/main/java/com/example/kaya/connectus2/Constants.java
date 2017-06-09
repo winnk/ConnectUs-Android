@@ -9,6 +9,6 @@ public class Constants {
 public static final String BD_TEST_URL = "https://api.betterdoctor.com/2016-03-01/doctors?query=diabetes&location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=dec62bc90fcd75b60056e4c068f708b5";
 public static final String BD_NOTE_TITLE ="noteTitle";
 public static final String BD_NOTE_DATE = "noteDate";
-public static final String FB_NOTE_BODY = "firebaseNoteBody";
-public static final String FB_CHILD_NOTES = "notes";
+public static final String FIREBASE_NOTE_BODY = "firebaseNoteBody";
+public static final String FIREBASE_CHILD_NOTES = "notes";
 }
