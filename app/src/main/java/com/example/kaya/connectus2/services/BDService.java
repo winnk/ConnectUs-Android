@@ -43,7 +43,6 @@ public static void findBySymptom(String symptom, Callback callback) {
 
 public ArrayList<Doctor> processResults(Response response) {
     ArrayList<Doctor> doctors = new ArrayList<>();
-
     try {
         String jsonData = response.body().string();
         if (response.isSuccessful()) {
@@ -52,30 +51,30 @@ public ArrayList<Doctor> processResults(Response response) {
             for (int i = 0; i < bdArray.length(); i++) {
                 JSONObject doctorJSON = bdArray.getJSONObject(i);
                 String name = doctorJSON.getJSONArray("practices").getJSONObject(0).getString("name");
-
+                String specialty = doctorJSON.getJSONArray("specialties").getJSONObject(0).getString("actor");
 
                 ArrayList<String> phone = new ArrayList<>();
                 JSONArray phoneJSON = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
-                for (int y = 0; y < phoneJSON.length(); y++) {
-                    String number = phoneJSON.getJSONObject(y).getString("number");
-                    String formattedNumber = PhoneNumberUtils.formatNumber(number, Locale.getDefault().getCountry());
-                    phone.add(formattedNumber);
-                }
+                   for (int x = 0; x < phoneJSON.length(); x++) {
+                        String number = phoneJSON.getJSONObject(x).getString("number");
+                        String formattedNumber = PhoneNumberUtils.formatNumber(number, Locale.getDefault().getCountry());
+                        phone.add(formattedNumber);
+                     }
 
-                String street = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street");
-                String street2;
+                String address1 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street");
+                String address2;
                 try {
-                    street2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
+                    address2 = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("street2");
                 } catch (JSONException e) {
-                    street2 = "";
+                    address2 = "";
                 }
 
                 String city = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("city");
                 String state = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("state");
                 String zip = doctorJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").getString("zip");
+                Double latitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lat");
+                Double longitude = doctorJSON.getJSONArray("practices").getJSONObject(0).getDouble("lon");
 
-
-                String bio = doctorJSON.getJSONObject("profile").getString("bio");
                 String firstName = doctorJSON.getJSONObject("profile").getString("first_name");
                 String lastName = doctorJSON.getJSONObject("profile").getString("last_name");
                 String drBio = doctorJSON.getJSONObject("profile").getString("bio");
@@ -83,7 +82,8 @@ public ArrayList<Doctor> processResults(Response response) {
                 String drTitle = doctorJSON.getJSONObject("profile").getString("title");
                 Log.d("firstName", firstName);
 
-                Doctor instanceOf = new Doctor(firstName, lastName, drTitle, drBio, imageUrl);
+
+                Doctor instanceOf = new Doctor(name, drTitle, drBio, imageUrl, address1, address2, city, state, zip, phone, specialty, latitude, longitude, firstName, lastName, drTitle);
                 doctors.add(instanceOf);
             }
         }
