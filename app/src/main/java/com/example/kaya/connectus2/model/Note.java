@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 
 
+import org.parceler.Parcel;
+
 import java.util.Date;
 
 import static android.R.attr.format;
@@ -16,7 +18,7 @@ import static android.R.attr.format;
 /**
  * TODO: Add a class header comment!
  */
-
+@Parcel
 public class Note {
 String date;
 String body;

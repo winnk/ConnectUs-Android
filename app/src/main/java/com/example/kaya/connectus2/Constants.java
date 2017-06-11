@@ -1,7 +1,5 @@
 package com.example.kaya.connectus2;
 
-import com.example.kaya.connectus2.BuildConfig;
-
 public class Constants {
  public static final String BETTERDOCTOR_KEY = BuildConfig.BETTERDOCTOR_KEY;
  public static final String BD_BASE_URL = "https://api.betterdoctor.com/2016-03-01/doctors?query=";
@@ -11,4 +9,5 @@ public static final String BD_NOTE_TITLE ="noteTitle";
 public static final String BD_NOTE_DATE = "noteDate";
 public static final String FIREBASE_NOTE_BODY = "firebaseNoteBody";
 public static final String FIREBASE_CHILD_NOTES = "notes";
+public static final String FIREBASE_CHILD_DOCTORS = "doctors";
 }

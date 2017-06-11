@@ -21,8 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static java.security.AccessController.getContext;
-
 
 public class NotesActivity extends AppCompatActivity implements View.OnClickListener {
 // private Button mSaveNoteButton;
@@ -31,7 +29,7 @@ public class NotesActivity extends AppCompatActivity implements View.OnClickList
 private DatabaseReference mFirebaseNoteBody;
 
 @Bind(R.id.saveNoteButton)Button mSaveNoteButton;
-@Bind(R.id.noteBodyET)EditText mNoteBodyET;
+@Bind(R.id.noteBodyTV)EditText mNoteBodyET;
 @Bind(R.id.noteTitleET) EditText mNoteTitle;
 
 
@@ -86,9 +84,9 @@ public void onClick(View v) {
             pushRef.setValue(note);
             Log.d("saved:", noteTitle);
             Toast.makeText(NotesActivity.this, "Saved", Toast.LENGTH_SHORT).show();
-          //  ResetFields();
+            ResetFields();
 
-            Intent intent = new Intent(NotesActivity.this, NotesListActivity.class);
+            Intent intent = new Intent(NotesActivity.this, SavedNotesListActivity.class);
             startActivity(intent);
         }
     }
