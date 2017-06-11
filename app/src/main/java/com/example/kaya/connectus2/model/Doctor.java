@@ -33,7 +33,7 @@ public Doctor(String name, String title, String bio, String url, String address1
     this.drTitle = drTitle;
     this.name = name;
     this.bio = bio;
-    this.imageUrl = getLargeImageUrl(imageUrl);
+    this.imageUrl = url;
     this.address1 = address1;
     this.address2 = address2;
     this.city = city;
