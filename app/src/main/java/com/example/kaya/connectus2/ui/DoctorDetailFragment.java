@@ -61,6 +61,8 @@ public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     mDoctor = Parcels.unwrap(getArguments().getParcelable("doctor"));
     Log.d("DoctorDetailFragment","onCreate runs");
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 }
 
 @Override
@@ -81,6 +83,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
     mAddress1Label.setOnClickListener(this);
     mAddress3Label.setOnClickListener(this);
     mSaveDoctorButton.setOnClickListener(this);
+    mPhoneLabel.setOnClickListener(this);
     Log.d("fragment", "fragment_doctor_detail onCreateView loads");
     return view;
 }
@@ -103,6 +106,11 @@ public void onClick(View v) {
         pushRef.setValue(mDoctor);
 
         Toast.makeText(getContext(), "Doctor Saved!", Toast.LENGTH_SHORT).show();
+    }
+    if (v == mPhoneLabel) {
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL,
+                Uri.parse("tel:" + mDoctor.getPhone()));
+        startActivity(phoneIntent);
     }
  }
 
