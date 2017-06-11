@@ -14,7 +14,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:paddingBottom="20dp"
             android:paddingLeft="10dp"
@@ -27,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="43dp"
                 android:text="Name"
+                android:textAlignment="textStart"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -36,12 +38,21 @@
                 android:id="@+id/specialtyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/doctorNameTextView"
-                android:layout_marginStart="23dp"
-                android:layout_toEndOf="@+id/doctorNameTextView"
                 android:text="Specialty"
+                android:textAlignment="viewStart"
                 android:textColor="@color/colorPrimaryText"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_below="@+id/doctorNameTextView"
+                android:layout_alignStart="@+id/doctorNameTextView"/>
+
+            <ImageView
+                android:id="@+id/doctorImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/specialtyTextView"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@android:drawable/sym_call_incoming"
+                android:layout_alignParentTop="true"/>
 
         </RelativeLayout>
 
@@ -125,15 +136,6 @@
                 android:text="Save Doctor"
                 android:textColor="@color/colorTextIcons"
                 android:textSize="15sp"/>
-
-            <ImageView
-                android:id="@+id/doctorImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/linearLayout"
-                android:layout_marginStart="106dp"
-                app:srcCompat="@android:drawable/sym_call_incoming"/>
 
         </RelativeLayout>
     </LinearLayout>
