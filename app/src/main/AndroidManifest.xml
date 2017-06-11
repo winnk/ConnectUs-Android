@@ -38,10 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.SavedNotesListActivity">
         </activity>
         <activity android:name=".ui.NoteDetailActivity">
+        </activity>
+        <activity android:name=".ui.SavedDoctorsListActivity">
         </activity>
     </application>
 

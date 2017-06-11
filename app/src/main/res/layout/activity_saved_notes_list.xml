@@ -8,8 +8,19 @@
     tools:context="com.example.kaya.connectus2.ui.SavedNotesListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
+        android:layout_width="366dp"
+        android:layout_height="464dp"
+        android:id="@+id/recyclerView"
+        tools:layout_editor_absoluteY="39dp"
+        tools:layout_editor_absoluteX="10dp"/>
+
+    <TextView
+        android:id="@+id/savednotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="savednotes"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"/>
 
 </android.support.constraint.ConstraintLayout>

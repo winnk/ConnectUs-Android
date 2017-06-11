@@ -61,6 +61,8 @@ public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     mDoctor = Parcels.unwrap(getArguments().getParcelable("doctor"));
     Log.d("DoctorDetailFragment","onCreate runs");
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 }
 
 @Override

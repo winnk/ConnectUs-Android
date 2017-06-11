@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="No Search Results Found. Go back and try a different search!"
+        android:text="Nothing Found."
         android:id="@+id/noResultsTextView"
         android:textAlignment="center"
         android:layout_marginLeft="30dp"

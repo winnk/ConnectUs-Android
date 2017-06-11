@@ -29,6 +29,7 @@ public class NotesActivity extends AppCompatActivity implements View.OnClickList
 private DatabaseReference mFirebaseNoteBody;
 
 @Bind(R.id.saveNoteButton)Button mSaveNoteButton;
+@Bind(R.id.allNotesButton)Button mAllNotesButton;
 @Bind(R.id.noteBodyTV)EditText mNoteBodyET;
 @Bind(R.id.noteTitleET) EditText mNoteTitle;
 
@@ -46,18 +47,27 @@ protected void onCreate(Bundle savedInstanceState) {
 @Override
 public void onClick(View v) {
 
+    if (v == mAllNotesButton) {
+        Intent intent = new Intent(NotesActivity.this, SavedNotesListActivity.class);
+        Log.d("mAllNotesButton", "click to SavedNotes");
+
+        Toast.makeText(NotesActivity.this, "clicked",
+                Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
+
     if (v == mSaveNoteButton) {
         String noteBody = mNoteBodyET.getText().toString();
         String noteTitle = mNoteTitle.getText().toString();
 
-// Calls validator
+        // Calls validator
         InputValidatorHelper inputValidatorHelper = new InputValidatorHelper();
         StringBuilder errMsg = new StringBuilder("Unable to save ");
 
-//Validate and Save
+        //Validate and Save
         boolean allowSave = true;
 
-//calls validator helper class
+        //calls validator helper class
         if (inputValidatorHelper.isNullOrEmpty(noteTitle) || inputValidatorHelper.isNullOrEmpty(noteBody)) {
             errMsg.append("- Title and note should not be empty.\n");
             Toast.makeText(NotesActivity.this, errMsg,
@@ -65,8 +75,8 @@ public void onClick(View v) {
             allowSave = false;
         }
 
-        if(allowSave){
-//Proceeds with save logic
+        if (allowSave) {
+        //Proceeds with save logic
 
             Note note = new Note(noteBody, noteTitle);
 
@@ -89,7 +99,7 @@ public void onClick(View v) {
             Intent intent = new Intent(NotesActivity.this, SavedNotesListActivity.class);
             startActivity(intent);
         }
-    }
+     }
 }
 
 public void ResetFields() {

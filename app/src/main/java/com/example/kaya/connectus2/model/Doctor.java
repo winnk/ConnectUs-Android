@@ -33,7 +33,7 @@ public Doctor(String name, String title, String bio, String url, String address1
     this.drTitle = drTitle;
     this.name = name;
     this.bio = bio;
-    this.imageUrl = url;
+    this.imageUrl = getLargeImageUrl(imageUrl);
     this.address1 = address1;
     this.address2 = address2;
     this.city = city;
@@ -54,6 +54,10 @@ public String getTitle(){return title;}
 public String getImageUrl(){
     return imageUrl;
 }
+public String getLargeImageUrl(String imageUrl) {
+    String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 6).concat("o.jpg");
+    return largeImageUrl;
+}
 public String getdrTitle() {return drTitle;}
 public String getBio() {
     return bio;
@@ -69,7 +73,10 @@ public Double getLatitude(){return latitude;}
 public Double getLongitude(){return longitude;}
 public String getPushId(){return pushId;}
 public void setPushId(String pushId){this.pushId = pushId;}
+
+
 }
+
 
 
 
