@@ -7,20 +7,23 @@
     android:layout_height="match_parent"
     tools:context="com.example.kaya.connectus2.ui.NotesActivity"
     tools:layout_editor_absoluteY="81dp"
+    android:background="@drawable/gradient"
     tools:layout_editor_absoluteX="0dp">
-
-
 
 
     <EditText
         android:id="@+id/noteBodyTV"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="39dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Enter note"
         android:inputType="textPersonName|textNoSuggestions"
+        android:selectAllOnFocus="false"
         app:layout_constraintBottom_toTopOf="@+id/saveNoteButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
@@ -28,7 +31,7 @@
         android:id="@+id/noteTitleET"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="23dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -43,32 +46,47 @@
 
     <Button
         android:id="@+id/saveNoteButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="58dp"
         android:layout_marginEnd="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginStart="0dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@color/colorPrimaryDark"
         android:text="Save Note"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="489dp"/>
+
+    <Button
+        android:id="@+id/allNotesButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="518dp"
+        android:background="@color/colorAccent"
+        android:text="View All Notes"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <Button
-        android:id="@+id/allNotesButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@color/colorAccent"
-        android:text="View All Notes"
-        android:textColor="@color/colorTextIcons"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"/>
+        android:id="@+id/photoButtton"
+        android:layout_width="130dp"
+        android:layout_height="51dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Attach image"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="493dp"/>
 
 </android.support.constraint.ConstraintLayout>

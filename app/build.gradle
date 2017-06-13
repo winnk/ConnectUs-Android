@@ -5,6 +5,11 @@ android {
     buildToolsVersion "25.0.3"
     useLibrary 'org.apache.http.legacy'
 
+    aaptOptions
+            {
+                cruncherEnabled = false
+            }
+
     defaultConfig {
         applicationId "com.example.kaya.connectus2"
         minSdkVersion 21
@@ -37,6 +42,7 @@ android {
         it.buildConfigField 'String', 'BETTERDOCTOR_KEY', BetterdoctorKey
     }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
