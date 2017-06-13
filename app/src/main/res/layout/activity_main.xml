@@ -5,15 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.example.kaya.connectus2.ui.MainActivity">
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/greenhaze"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/greenhaze"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"/>
 
@@ -25,28 +24,33 @@
         android:layout_marginLeft="103dp"
         android:layout_marginStart="103dp"
         android:layout_marginTop="155dp"
-        android:tint="@color/colorPrimaryDark"
+        android:scaleType="centerCrop"
+        android:tint="@color/colorPrimaryText"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/noteButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm"/>
+
+        app:srcCompat="@drawable/reminder"/>
 
     <ImageButton
         android:id="@+id/symptomSearchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="68dp"
+        android:layout_width="71dp"
+        android:layout_height="66dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="43dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="155dp"
-        android:tint="?attr/colorPrimary"
+        android:scaleType="centerCrop"
+        android:tint="@color/colorPrimaryText"
+        android:background="@android:color/transparent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/reminderButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_search_category_default"/>
+        app:srcCompat="@drawable/search"/>
 
     <ImageButton
         android:id="@+id/noteButton"
@@ -55,10 +59,12 @@
         android:layout_marginLeft="100dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="264dp"
-        android:tint="?android:attr/colorPrimaryDark"
+        android:scaleType="centerCrop"
+        android:tint="@android:color/black"
+        android:background="@android:color/transparent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit"/>
+        app:srcCompat="@drawable/pencil2"/>
 
     <ImageButton
         android:id="@+id/calendarButton"
@@ -67,10 +73,12 @@
         android:layout_marginLeft="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="41dp"
-        android:tint="@color/colorPrimaryDark"
+        android:scaleType="centerCrop"
+        android:tint="@color/colorPrimaryText"
+        android:background="@android:color/transparent"
         app:layout_constraintLeft_toRightOf="@+id/noteButton"
         app:layout_constraintTop_toBottomOf="@+id/symptomSearchButton"
-        app:srcCompat="@android:drawable/ic_menu_my_calendar"/>
+        app:srcCompat="@drawable/calendar"/>
 
     <TextView
         android:id="@+id/mainTitleTV"
