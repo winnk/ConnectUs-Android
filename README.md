@@ -10,6 +10,9 @@ An Android application enabling people to manage their phsician appointments. Ph
 ## Screenshots
 <img src="https://cloud.githubusercontent.com/assets/5551534/26514919/5246830c-422a-11e7-8e1e-b5cd9b399b94.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/5551534/26514923/56c418a4-422a-11e7-9e54-56719a1789d8.png" width="45%"></img>
 
+## Screens
+<img width="228" alt="login" src="https://user-images.githubusercontent.com/5551534/27156925-1410eb42-5114-11e7-8686-ec43653dab07.PNG"></img>
+
 ## Setup, Installation, Requirements
 * [Clone repository]
 * Get an API key from Better Doctor and update

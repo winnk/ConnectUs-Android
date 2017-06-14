@@ -8,6 +8,9 @@
     android:background="@drawable/gradient"
     tools:context="com.example.kaya.connectus2.ui.MainActivity">
 
+
+
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
@@ -100,5 +103,6 @@
         android:layout_marginTop="40dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="parent"/>
+
 
 </android.support.constraint.ConstraintLayout>
