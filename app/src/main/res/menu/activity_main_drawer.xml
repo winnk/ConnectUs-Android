@@ -3,42 +3,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_symptom"
-            android:icon="@drawable/ic_search"
-            android:title="Search by Symptom"
-            android:checked="true"/>
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Import"/>
         <item
-            android:id="@+id/nav_city"
-            android:icon="@drawable/ic_search"
-            android:title="Search by City"/>
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery"/>
         <item
-            android:id="@+id/nav_specialty"
-            android:icon="@drawable/ic_search"
-            android:title="Search by Specialty"/>
-        <item
-            android:id="@+id/nav_wiki"
-            android:icon="@android:drawable/ic_menu_info_details"
-            android:title="Medical Wiki"/>
-        <item
-            android:id="@+id/nav_reminder"
-            android:icon="@drawable/ic_alarm"
-            android:title="Set Medication Reminder"/>
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Slideshow"/>
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_navigation"
-            android:title="Locate Pharmacies"/>
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools"/>
     </group>
 
-    <item android:title="ConnectUs Info">
+    <item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@android:drawable/ic_menu_my_calendar"
-                android:title="View Calendar"/>
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share"/>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Email"/>
+                android:title="Send"/>
         </menu>
     </item>
 
