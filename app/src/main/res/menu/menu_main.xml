@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/action_logout"
         android:title="Logout"
         android:visible="true"
-        app:showAsAction="never" />
+        />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/search"
+        android:title="Dr. Search"
+        />
+    <item
+        android:id="@+id/action_notes"
+        android:icon="@drawable/pencil2"
+        android:title="Notes"
+        />
+    <item
+        android:id="@+id/action_reminder"
+        android:icon="@drawable/reminder"
+        android:title="Set Reminders"
+        />
+    <item
+        android:id="@+id/action_calendar"
+        android:icon="@drawable/calendar"
+        android:title="Appointment Calendar"
+        />
+
+
 </menu>

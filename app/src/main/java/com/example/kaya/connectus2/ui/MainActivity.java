@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.kaya.connectus2.Constants;
 import com.example.kaya.connectus2.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -87,6 +88,22 @@ public boolean onOptionsItemSelected(MenuItem item) {
     if (id == R.id.action_logout) {
         logout();
         return true;
+    }
+    if (id == R.id.action_search) {
+        Intent intent = new Intent(MainActivity.this, SearchSelect.class);
+        startActivity(intent);
+    }
+    if (id == R.id.action_notes) {
+        Intent intent = new Intent(MainActivity.this, NotesActivity.class);
+        startActivity(intent);
+    }
+    if (id == R.id.action_reminder) {
+        Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
+        startActivity(intent);
+    }
+    if (id == R.id.action_calendar) {
+        Intent intent = new Intent(MainActivity.this, NotesActivity.class);
+        startActivity(intent);
     }
     return super.onOptionsItemSelected(item);
 }
