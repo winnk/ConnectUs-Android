@@ -61,7 +61,16 @@ public void bindDoctor(Doctor doctor) {
 @Override
 public void onClick(View view) {
     final ArrayList<Doctor> doctors = new ArrayList<>();
-    DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS);
+
+
+    // check assignment on this to see if this should be here
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
+
+    DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS).child(uid);
+
+
+
     doctorRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
         @Override
@@ -69,9 +78,7 @@ public void onClick(View view) {
             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                 doctors.add(snapshot.getValue(Doctor.class));
             }
-
             int itemPosition = getLayoutPosition();
-
             Intent intent = new Intent(mContext, DoctorDetailActivity.class);
             intent.putExtra("position", itemPosition + "");
             intent.putExtra("doctors", Parcels.wrap(doctors));

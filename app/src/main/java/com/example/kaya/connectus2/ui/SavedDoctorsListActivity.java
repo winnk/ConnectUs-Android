@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
 import com.example.kaya.connectus2.Constants;
 import com.example.kaya.connectus2.R;
 import com.example.kaya.connectus2.adapters.FirebaseDoctorViewHolder;
@@ -18,11 +20,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class SavedDoctorsListActivity extends AppCompatActivity {
-private DatabaseReference mDoctorReference;
+private DatabaseReference mDoctorRef;
 private FirebaseRecyclerAdapter mFirebaseAdapter;
-
-@Bind(R.id.recyclerView)
-RecyclerView mRecyclerView;
+@Bind(R.id.recyclerView)RecyclerView mRecyclerView;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +32,22 @@ protected void onCreate(Bundle savedInstanceState) {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     String uid = user.getUid();
 
-    mDoctorReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS).child(uid);
+    mDoctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS).child(uid);
+    Log.d("saved", "oncreate runs for SaveDoctorListActivity");
     setUpFirebaseAdapter();
 }
+
 
 private void setUpFirebaseAdapter() {
     mFirebaseAdapter = new FirebaseRecyclerAdapter<Doctor, FirebaseDoctorViewHolder>
             (Doctor.class, R.layout.doctor_list_item, FirebaseDoctorViewHolder.class,
-                    mDoctorReference) {
+                    mDoctorRef) {
 
-        @Override
-        protected void populateViewHolder(FirebaseDoctorViewHolder viewHolder, Doctor model, int position) {viewHolder.bindDoctor(model);
-        }
+    @Override
+    protected void populateViewHolder(FirebaseDoctorViewHolder viewHolder, Doctor model, int position) {viewHolder.bindDoctor(model);
+      }
     };
+
     mRecyclerView.setHasFixedSize(true);
     mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     mRecyclerView.setAdapter(mFirebaseAdapter);

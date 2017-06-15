@@ -30,6 +30,7 @@
             android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="17dp"
+            android:layout_marginLeft="8dp"
             android:background="@android:color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
@@ -39,10 +40,9 @@
             android:textColorHint="@color/colorDivider"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp"
+            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintHorizontal_bias="0.453"/>
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <EditText
             android:id="@+id/passwordEditText"
