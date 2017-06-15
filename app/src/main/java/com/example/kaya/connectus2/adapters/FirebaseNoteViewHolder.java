@@ -2,7 +2,10 @@ package com.example.kaya.connectus2.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.View;
 import android.widget.TextView;
 import com.example.kaya.connectus2.Constants;
@@ -18,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import org.parceler.Parcels;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -46,6 +50,21 @@ public void bindNote(Note note) {
     noteTitle.setText(note.getTitle());
     noteDate.setText(note.getDate());
 
+
+    if (!note.getImageUrl().contains("http")) {
+        try {
+            Bitmap imageBitmap = decodeFromFirebaseBase64(note.getImageUrl());
+            mNoteImageView.setImageBitmap(imageBitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {
+    byte[] decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT);
+    return BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.length);
 }
 
 @Override
