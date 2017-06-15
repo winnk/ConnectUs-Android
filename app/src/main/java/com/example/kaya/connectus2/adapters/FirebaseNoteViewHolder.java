@@ -51,15 +51,7 @@ public void bindNote(Note note) {
     noteDate.setText(note.getDate());
 
 
-    if (!note.getImageUrl().contains("http")) {
-        try {
-            Bitmap imageBitmap = decodeFromFirebaseBase64(note.getImageUrl());
-            mNoteImageView.setImageBitmap(imageBitmap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }
 }
 
 public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {
