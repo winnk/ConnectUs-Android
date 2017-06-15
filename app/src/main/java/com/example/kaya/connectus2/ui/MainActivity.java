@@ -105,6 +105,12 @@ public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(MainActivity.this, NotesActivity.class);
         startActivity(intent);
     }
+    if (id == R.id.action_photo) {
+        //onLaunchCamera();
+    //    default:
+          //  break;
+
+    }
     return super.onOptionsItemSelected(item);
 }
 

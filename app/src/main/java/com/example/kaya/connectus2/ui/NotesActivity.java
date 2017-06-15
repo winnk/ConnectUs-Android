@@ -1,12 +1,15 @@
 package com.example.kaya.connectus2.ui;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.kaya.connectus2.Constants;
@@ -28,11 +31,15 @@ public class NotesActivity extends AppCompatActivity implements View.OnClickList
 
 private DatabaseReference mFirebaseNoteBody;
 
+@Bind(R.id.noteImageView) ImageView mImageLabel;
 @Bind(R.id.saveNoteButton)Button mSaveNoteButton;
 @Bind(R.id.allNotesButton)Button mAllNotesButton;
 @Bind(R.id.noteBodyTV)EditText mNoteBodyET;
 @Bind(R.id.noteTitleET) EditText mNoteTitle;
 
+// to hold image data
+private ImageView mImageView;
+private Bitmap mImageBitmap;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,23 @@ protected void onCreate(Bundle savedInstanceState) {
     ButterKnife.bind(this);
 
     mSaveNoteButton.setOnClickListener(this);
+}
+
+public void onLaunchCamera() {
+    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+    }
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+        Bundle extras = data.getExtras();
+        Bitmap imageBitmap = (Bitmap) extras.get("data");
+        mImageLabel.setImageBitmap(imageBitmap);
+        encodeBitmapAndSaveToFirebase(imageBitmap);
+    }
 }
 
 @Override

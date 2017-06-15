@@ -25,6 +25,9 @@
         android:id="@+id/action_calendar"
         android:title="Appointment Calendar"
         />
-
+    <item
+        android:id="@+id/action_photo"
+        app:showAsAction="always"
+        android:title="Photo"/>
 
 </menu>
