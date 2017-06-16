@@ -21,8 +21,7 @@ public class SavedDoctorsListActivity extends AppCompatActivity {
 private DatabaseReference mDoctorReference;
 private FirebaseRecyclerAdapter mFirebaseAdapter;
 
-@Bind(R.id.recyclerView)
-RecyclerView mRecyclerView;
+@Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {

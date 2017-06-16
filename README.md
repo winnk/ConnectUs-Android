@@ -7,7 +7,22 @@
 ## Description
 An Android application enabling people to manage their phsician appointments. Physician searches are provied via the betterdoctor.com API which returns a list of phsycisians in their area who can address their symptoms. Addtionally, appoinments can be saved in the calendar and notes for appointments can be saved. Future development is connecting a second API to research symptoms and attach images to notes.
 
-## Screenshots
+## Android features used in this app:
+
+    Activities
+    Fragments
+    RecyclerViews
+    ViewPagers
+    Dialogs
+    Camera Usage
+    Saving and Loading Files
+    External Storage
+    Alternative layouts
+    JSON
+    Tool Bar
+
+
+## Wireframs
 <img src="https://cloud.githubusercontent.com/assets/5551534/26514919/5246830c-422a-11e7-8e1e-b5cd9b399b94.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/5551534/26514923/56c418a4-422a-11e7-9e54-56719a1789d8.png" width="45%"></img>
 
 ## Screens
@@ -21,12 +36,11 @@ An Android application enabling people to manage their phsician appointments. Ph
 * Create user profile
 * Enjoy
 
-
-
 ## Technologies Used
 * Android Studio
 * Java
 * BetterDoctor API
+* Firebase
 
 ## License
 This project is licensed under the MIT License - [license]

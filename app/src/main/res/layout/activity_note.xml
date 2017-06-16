@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaya.connectus2.ui.NotesActivity"
+    tools:layout_editor_absoluteY="81dp"
+    android:background="@drawable/gradient"
+    tools:layout_editor_absoluteX="0dp">
+
+
+    <Button
+        android:id="@+id/allNotesButton"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="0dp"
+        android:text="All Notes"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"/>
+
+    <EditText
+        android:id="@+id/noteTitleET"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <Button
+        android:id="@+id/saveNoteButton"
+        android:layout_width="124dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Save Note"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="244dp"/>
+
+    <Button
+        android:id="@+id/photoButtton"
+        android:layout_width="64dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginRight="4dp"
+        android:background="@color/colorPrimaryDark"
+        android:drawableBottom="@android:drawable/ic_menu_camera"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/saveNoteButton"
+        app:layout_constraintRight_toLeftOf="@+id/noteImageView"/>
+
+    <ImageView
+        android:id="@+id/noteImageView"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="214dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.728"
+        app:srcCompat="@android:drawable/picture_frame"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        />
+
+    <EditText
+        android:id="@+id/noteBodyTV"
+        android:layout_width="364dp"
+        android:layout_height="297dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:hint="Note"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteTitleET"
+        android:layout_marginStart="11dp"/>
+
+</android.support.constraint.ConstraintLayout>

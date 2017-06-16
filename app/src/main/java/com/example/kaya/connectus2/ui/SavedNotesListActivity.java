@@ -10,6 +10,8 @@ import com.example.kaya.connectus2.R;
 import com.example.kaya.connectus2.adapters.FirebaseNoteViewHolder;
 import com.example.kaya.connectus2.model.Note;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,10 +28,11 @@ private FirebaseRecyclerAdapter mFirebaseAdapter;
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_notes_list);
-
     ButterKnife.bind(this);
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
 
-    mNoteReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES);
+    mNoteReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES).child(uid);
     setUpFirebaseAdapter();
 }
 
@@ -49,10 +52,10 @@ private void setUpFirebaseAdapter() {
 }
 
 @Override
-protected void onDestroy() {
-    super.onDestroy();
-    mFirebaseAdapter.cleanup();
-}
+    protected void onDestroy() {
+        super.onDestroy();
+         mFirebaseAdapter.cleanup();
+ }
 }
 
 

@@ -61,7 +61,12 @@ public void bindDoctor(Doctor doctor) {
 @Override
 public void onClick(View view) {
     final ArrayList<Doctor> doctors = new ArrayList<>();
-    DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS);
+  //  DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS);
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+      String uid = user.getUid();
+    DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS).child(uid);
+
     doctorRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
         @Override
@@ -81,9 +86,8 @@ public void onClick(View view) {
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
-
         }
     });
-}
+ }
 }
 
