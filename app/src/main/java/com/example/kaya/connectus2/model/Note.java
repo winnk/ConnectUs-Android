@@ -20,9 +20,11 @@ import static android.R.attr.format;
  */
 @Parcel
 public class Note {
+
 String date;
 String body;
 String title;
+
 private String pushId;
 
 public Note(){}

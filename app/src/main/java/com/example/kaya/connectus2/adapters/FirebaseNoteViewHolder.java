@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
 
 import java.io.IOException;
@@ -29,6 +31,10 @@ import java.util.ArrayList;
  */
 
 public class FirebaseNoteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+private static final int MAX_WIDTH = 200;
+private static final int MAX_HEIGHT = 200;
+
 
 View mView;
 Context mContext;
@@ -44,34 +50,32 @@ public FirebaseNoteViewHolder(View itemView) {
 public void bindNote(Note note) {
     TextView noteBody = (TextView) mView.findViewById(R.id.noteBodyTV);
     TextView noteTitle = (TextView) mView.findViewById(R.id.noteTitleTV);
-    TextView noteDate = (TextView) mView.findViewById(R.id.noteDateTV);
+    //TextView noteDate = (TextView) mView.findViewById(R.id.noteDateTV);
+
+// add after notes view working
+   // Picasso.with(mContext).load(note.getImageUrl()).resize(MAX_WIDTH, MAX_HEIGHT).centerCrop().into(noteImageView);
 
     noteBody.setText(note.getNote());
     noteTitle.setText(note.getTitle());
-    noteDate.setText(note.getDate());
-
-
+  // noteDate.setText(note.getDate());
 
 }
-
-public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {
-    byte[] decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT);
-    return BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.length);
-}
+// ADD WHEN CAMERA ADDED
+//public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {
+  //  byte[] decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT);
+  // return BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.length);
+//}
 
 @Override
 public void onClick(View view) {
     final ArrayList<Note> notes = new ArrayList<>();
 
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String uid = user.getUid();
+    //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    // String uid = user.getUid();
 
-        DatabaseReference ref = FirebaseDatabase
-                .getInstance()
-                .getReference(Constants.FIREBASE_CHILD_NOTES)
-                .child(uid);
+        DatabaseReference noteRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES);
 
-    ref.addListenerForSingleValueEvent(new ValueEventListener() {
+    noteRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,5 +96,5 @@ public void onClick(View view) {
         public void onCancelled(DatabaseError databaseError) {
         }
     });
-}
+ }
 }

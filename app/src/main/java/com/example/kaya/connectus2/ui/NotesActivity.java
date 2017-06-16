@@ -50,11 +50,14 @@ private static final int REQUEST_IMAGE_CAPTURE = 111;
 protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_notes);
+    setContentView(R.layout.activity_note);
     ButterKnife.bind(this);
 
+    //setHasOptionsMenu(true);
+
     mSaveNoteButton.setOnClickListener(this);
-    mPhotoButton.setOnClickListener(this);
+        mPhotoButton.setOnClickListener(this);
+
 }
 
 
@@ -62,6 +65,7 @@ public void onLaunchCamera() {
     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
     if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        Log.d("onLaunchCamera", "on launch runs");
     }
 }
 
@@ -72,6 +76,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Bitmap imageBitmap = (Bitmap) extras.get("data");
         mImageLabel.setImageBitmap(imageBitmap);
         encodeBitmapAndSaveToFirebase(imageBitmap);
+        Log.d("onActivityResult", "activityResult runs");
     }
 }
 
@@ -87,12 +92,15 @@ public void onClick(View v) {
         startActivity(intent);
     }
     if (v == mPhotoButton){
+        Log.d("mPhotoButton", "is pressed");
         onLaunchCamera();
          }
 
     if (v == mSaveNoteButton) {
         String noteBody = mNoteBodyET.getText().toString();
         String noteTitle = mNoteTitle.getText().toString();
+        Log.d("mPhotoButton", "is pressed");
+        Log.d("mPhotoButton", noteBody);
 
         // Calls validator
         InputValidatorHelper inputValidatorHelper = new InputValidatorHelper();
@@ -111,7 +119,7 @@ public void onClick(View v) {
 
         if (allowSave) {
         //Proceeds with save logic
-
+            Log.d("allowSave", "runs");
             Note note = new Note(noteBody, noteTitle);
 
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
