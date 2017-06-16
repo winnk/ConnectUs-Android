@@ -54,8 +54,8 @@ protected void onCreate(Bundle savedInstanceState) {
     ButterKnife.bind(this);
 
     mSaveNoteButton.setOnClickListener(this);
+    mPhotoButton.setOnClickListener(this);
 }
-
 
 
 public void onLaunchCamera() {
@@ -143,7 +143,7 @@ public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
     DatabaseReference ref = FirebaseDatabase.getInstance()
             .getReference(Constants.FIREBASE_CHILD_NOTES)
             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-            .child(mNotes.getPushId()) // FIGURE OUT WHAT GOES HERE
+            //.child(mNotes.getPushId()) // FIGURE OUT WHAT GOES HERE
             .child("imageUrl");
     ref.setValue(imageEncoded);
 }
