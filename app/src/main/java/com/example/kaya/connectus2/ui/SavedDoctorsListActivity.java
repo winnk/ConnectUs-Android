@@ -37,7 +37,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 private void setUpFirebaseAdapter() {
     mFirebaseAdapter = new FirebaseRecyclerAdapter<Doctor, FirebaseDoctorViewHolder>
-            (Doctor.class, R.layout.doctor_list_item, FirebaseDoctorViewHolder.class,
+            (Doctor.class, R.layout.doctor_list_item_drag, FirebaseDoctorViewHolder.class,
                     mDoctorReference) {
 
         @Override

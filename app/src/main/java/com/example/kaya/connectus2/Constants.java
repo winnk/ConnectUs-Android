@@ -10,4 +10,7 @@ public static final String BD_NOTE_DATE = "noteDate";
 public static final String FIREBASE_NOTE_BODY = "firebaseNoteBody";
 public static final String FIREBASE_CHILD_NOTES = "notes";
 public static final String FIREBASE_CHILD_DOCTORS = "doctors";
+public static final String KEY_SOURCE = "source";
+public static final String SOURCE_SAVED = "saved";
+public static final String SOURCE_FIND = "find";
 }
