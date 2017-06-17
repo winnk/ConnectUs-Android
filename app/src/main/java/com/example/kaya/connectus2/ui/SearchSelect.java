@@ -33,6 +33,7 @@ protected void onCreate(Bundle savedInstanceState) {
     mSymptomSearchButton.setOnClickListener(this);
     mAllDoctorsButton.setOnClickListener(this);
     Animation animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+    animation.setRepeatCount(Animation.INFINITE);
     crosshairs.startAnimation(animation );
 }
 
