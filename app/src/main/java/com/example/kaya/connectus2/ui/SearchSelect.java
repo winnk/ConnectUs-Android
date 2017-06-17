@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.kaya.connectus2.R;
 
@@ -18,7 +21,8 @@ public class SearchSelect extends AppCompatActivity implements View.OnClickListe
 Button mSymptomSearchButton;
 @Bind(R.id.allDoctorsButton)
 Button mAllDoctorsButton;
-
+@Bind(R.id.crosshairs) ImageView crosshairs;
+Animation animBounce;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ protected void onCreate(Bundle savedInstanceState) {
     ButterKnife.bind(this);
     mSymptomSearchButton.setOnClickListener(this);
     mAllDoctorsButton.setOnClickListener(this);
+    Animation animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+    animation.setRepeatCount(Animation.INFINITE);
+    crosshairs.startAnimation(animation );
 }
 
 @Override

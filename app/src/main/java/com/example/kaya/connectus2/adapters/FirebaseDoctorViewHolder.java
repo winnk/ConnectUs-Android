@@ -34,6 +34,7 @@ public class FirebaseDoctorViewHolder extends RecyclerView.ViewHolder implements
 
 private static final int MAX_WIDTH = 200;
 private static final int MAX_HEIGHT = 200;
+public ImageView mDoctorImageView;
 
 View mView;
 Context mContext;
@@ -48,12 +49,13 @@ public FirebaseDoctorViewHolder(View itemView) {
 public void bindDoctor(Doctor doctor) {
     TextView firstNameTV = (TextView) mView.findViewById(R.id.firstNameTV);
     ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
+    mDoctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
 
     Picasso.with(mContext)
             .load(doctor.getImageUrl())
             .resize(MAX_WIDTH, MAX_HEIGHT)
             .centerCrop()
-            .into(doctorImageView);
+            .into(mDoctorImageView); //changed from doctorImageView for gesture animation
 
     firstNameTV.setText(doctor.getName());
   }
