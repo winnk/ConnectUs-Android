@@ -40,7 +40,7 @@ private static final int REQUEST_IMAGE_CAPTURE = 111;
 @Bind(R.id.allNotesButton)Button mAllNotesButton;
 @Bind(R.id.noteBodyTV)EditText mNoteBodyET;
 @Bind(R.id.noteTitleET) EditText mNoteTitle;
-@Bind(R.id.photoButtton) Button mPhotoButton;
+//@Bind(R.id.photoButtton) Button mPhotoButton;
 
 // to hold image data
 // private ImageView mImageView;
@@ -56,7 +56,7 @@ protected void onCreate(Bundle savedInstanceState) {
     //setHasOptionsMenu(true);
 
     mSaveNoteButton.setOnClickListener(this);
-        mPhotoButton.setOnClickListener(this);
+        //mPhotoButton.setOnClickListener(this);
 
 }
 
@@ -91,10 +91,10 @@ public void onClick(View v) {
                 Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
-    if (v == mPhotoButton){
-        Log.d("mPhotoButton", "is pressed");
-        onLaunchCamera();
-         }
+  //  if (v == mPhotoButton){
+       // Log.d("mPhotoButton", "is pressed");
+     //   onLaunchCamera();
+       //  }
 
     if (v == mSaveNoteButton) {
         String noteBody = mNoteBodyET.getText().toString();

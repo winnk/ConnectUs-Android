@@ -86,7 +86,11 @@
         app:layout_constraintTop_toBottomOf="@+id/reminderButton"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/calendar"
-        tools:layout_constraintLeft_creator="1"/>
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="76dp"
+        app:layout_constraintRight_toLeftOf="@+id/symptomSearchButton"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.131"/>
 
     <TextView
         android:id="@+id/mainTitleTV"
