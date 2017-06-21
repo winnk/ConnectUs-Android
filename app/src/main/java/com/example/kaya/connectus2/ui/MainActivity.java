@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.calendarButton) ImageButton mCalendarButton;
     @Bind(R.id.reminderButton) ImageButton mReminderButton;
     @Bind(R.id.mainTitleTV) TextView mMainTitleTV;
+    private TextView thedate;
 
-@Override
+    @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -68,6 +69,10 @@ protected void onCreate(Bundle savedInstanceState) {
     mCalendarButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Intent incoming = getIntent();
+            String date = incoming.getStringExtra("date");
+           // thedate.setText("06/15/2017");
+
             Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
             startActivity(intent);
         }
