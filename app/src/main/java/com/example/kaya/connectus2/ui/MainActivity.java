@@ -98,12 +98,12 @@ public boolean onOptionsItemSelected(MenuItem item) {
         startActivity(intent);
     }
     if (id == R.id.action_reminder) {
-       // Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
-      //  startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
+       startActivity(intent);
 
     }
     if (id == R.id.action_calendar) {
-        Intent intent = new Intent(MainActivity.this, NotesActivity.class);
+        Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
         startActivity(intent);
     }
     if (id == R.id.action_photo) {

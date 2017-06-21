@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 
 public class SavedNotesListActivity extends AppCompatActivity implements OnStartDragListener {
 
-    // private DatabaseReference mNoteReference;
+    private DatabaseReference mNoteReference;
     private FirebaseNoteListAdapter mFirebaseAdapter;
     private ItemTouchHelper mItemTouchHelper;
 

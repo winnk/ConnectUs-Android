@@ -26,12 +26,14 @@ String body;
 String title;
 private String pushId;
 String index;
+    String imageUrl;
 
 public Note(){}
 
 public Note (String noteBody, String noteTitle){
     this.body = noteBody;
     this.title = noteTitle;
+    this.imageUrl = "http://blog.allo.ua/wp-content/uploads/ColorNote-logotip.png";
 
     java.util.Calendar cal = java.util.Calendar.getInstance();
     String year = cal.get(java.util.Calendar.YEAR) + "";
@@ -45,6 +47,8 @@ public Note (String noteBody, String noteTitle){
 public String getNote() {
     return body;
 }
+
+public String getNoteUrl(){return imageUrl;}
 
 public String getTitle(){
     return title;
@@ -68,7 +72,7 @@ public void setPushId(String pushId) {
     this.pushId = pushId;
 }
 
-    public void setIndex(String index) {
+public void setIndex(String index) {
         this.index = index;
     }
 

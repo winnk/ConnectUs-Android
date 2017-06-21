@@ -35,6 +35,7 @@ public class FirebaseNoteListAdapter extends FirebaseRecyclerAdapter<Note, Fireb
     public FirebaseNoteListAdapter(Class<Note> modelClass, int modelLayout,
                                      Class<FirebaseNoteViewHolder> viewHolderClass,
                                      Query ref, OnStartDragListener onStartDragListener, Context context) {
+
         super(modelClass, modelLayout, viewHolderClass, ref);
         mRef = ref.getRef();
         mOnStartDragListener = onStartDragListener;
@@ -71,7 +72,7 @@ public class FirebaseNoteListAdapter extends FirebaseRecyclerAdapter<Note, Fireb
     }
 
     @Override
-    protected void populateViewHolder(final FirebaseNoteViewHolder viewHolder, Note model, int position) {
+    protected void populateViewHolder(FirebaseNoteViewHolder viewHolder, Note model, int position) {
         viewHolder.bindNote(model);
         Log.d("populateViewHolder","runs");
        /* viewHolder..setOnTouchListener(new View.OnTouchListener() {

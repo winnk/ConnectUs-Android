@@ -37,9 +37,11 @@ public class FirebaseNoteViewHolder extends RecyclerView.ViewHolder implements V
 private static final int MAX_WIDTH = 200;
 private static final int MAX_HEIGHT = 200;
 
+public ImageView mNoteImageView;
 
 View mView;
 Context mContext;
+
 
 
 public FirebaseNoteViewHolder(View itemView) {
@@ -52,7 +54,7 @@ public FirebaseNoteViewHolder(View itemView) {
 public void bindNote(Note note) {
     TextView noteBody = (TextView) mView.findViewById(R.id.noteBodyTV);
     TextView noteTitle = (TextView) mView.findViewById(R.id.noteTitleTV);
-    //mNoteImageView = (ImageView) mView.findViewById(R.id.noteImageView);
+    mNoteImageView = (ImageView) mView.findViewById(R.id.noteImageView);
 
     //TextView noteDate = (TextView) mView.findViewById(R.id.noteDateTV);
 
