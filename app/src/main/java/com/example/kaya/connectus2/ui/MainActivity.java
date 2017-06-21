@@ -2,6 +2,8 @@ package com.example.kaya.connectus2.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.icu.util.GregorianCalendar;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.calendarButton) ImageButton mCalendarButton;
     @Bind(R.id.reminderButton) ImageButton mReminderButton;
     @Bind(R.id.mainTitleTV) TextView mMainTitleTV;
+    private TextView thedate;
 
-@Override
+    @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -68,6 +71,10 @@ protected void onCreate(Bundle savedInstanceState) {
     mCalendarButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Intent incoming = getIntent();
+            String date = incoming.getStringExtra("date");
+           // thedate.setText("06/15/2017");
+
             Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
             startActivity(intent);
         }
@@ -98,13 +105,22 @@ public boolean onOptionsItemSelected(MenuItem item) {
         startActivity(intent);
     }
     if (id == R.id.action_reminder) {
-       // Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
-      //  startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
+       startActivity(intent);
 
     }
     if (id == R.id.action_calendar) {
-        Intent intent = new Intent(MainActivity.this, NotesActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+        Intent calIntent = new Intent(Intent.ACTION_INSERT);
+        calIntent.setData(CalendarContract.Events.CONTENT_URI);
+        calIntent.setType("vnd.android.cursor.item/event");
+        GregorianCalendar calDate = new GregorianCalendar(2012, 7, 15);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                calDate.getTimeInMillis());
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                calDate.getTimeInMillis());
+        startActivity(calIntent);
     }
     if (id == R.id.action_photo) {
         // future development

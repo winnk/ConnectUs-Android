@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ private static final int REQUEST_IMAGE_CAPTURE = 111;
 @Bind(R.id.allNotesButton)Button mAllNotesButton;
 @Bind(R.id.noteBodyTV)EditText mNoteBodyET;
 @Bind(R.id.noteTitleET) EditText mNoteTitle;
-//@Bind(R.id.photoButtton) Button mPhotoButton;
+@Bind(R.id.photoButton) ImageButton mPhotoButton;
 
 // to hold image data
 // private ImageView mImageView;
@@ -56,10 +57,9 @@ protected void onCreate(Bundle savedInstanceState) {
     //setHasOptionsMenu(true);
 
     mSaveNoteButton.setOnClickListener(this);
-        //mPhotoButton.setOnClickListener(this);
-
-}
-
+    mAllNotesButton.setOnClickListener(this);
+    mPhotoButton.setOnClickListener(this);
+    }
 
 public void onLaunchCamera() {
     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -75,32 +75,33 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Bundle extras = data.getExtras();
         Bitmap imageBitmap = (Bitmap) extras.get("data");
         mImageLabel.setImageBitmap(imageBitmap);
-        encodeBitmapAndSaveToFirebase(imageBitmap);
+        //encodeBitmapAndSaveToFirebase(imageBitmap);
         Log.d("onActivityResult", "activityResult runs");
     }
 }
 
 @Override
 public void onClick(View v) {
-
     if (v == mAllNotesButton) {
-        Intent intent = new Intent(NotesActivity.this, SavedNotesListActivity.class);
-        Log.d("mAllNotesButton", "click to SavedNotes");
-
         Toast.makeText(NotesActivity.this, "clicked",
                 Toast.LENGTH_SHORT).show();
-        startActivity(intent);
-    }
-  //  if (v == mPhotoButton){
-       // Log.d("mPhotoButton", "is pressed");
-     //   onLaunchCamera();
-       //  }
+        Log.d("mAllNotesButton", "points to SavedNotes");
+       Intent intent = new Intent(NotesActivity.this, SavedNotesListActivity.class);
+       startActivity(intent);
+       }
+
+    if (v == mPhotoButton){
+        Toast.makeText(NotesActivity.this, "clicked",
+                Toast.LENGTH_SHORT).show();
+        Log.d("mPhotoButton", "runs");
+        onLaunchCamera();
+        }
 
     if (v == mSaveNoteButton) {
         String noteBody = mNoteBodyET.getText().toString();
         String noteTitle = mNoteTitle.getText().toString();
-        Log.d("mPhotoButton", "is pressed");
-        Log.d("mPhotoButton", noteBody);
+        Log.d("mSaveNoteButton", "is pressed");
+        Log.d("mSaveButton", noteBody);
 
         // Calls validator
         InputValidatorHelper inputValidatorHelper = new InputValidatorHelper();
@@ -115,7 +116,8 @@ public void onClick(View v) {
             Toast.makeText(NotesActivity.this, errMsg,
                     Toast.LENGTH_SHORT).show();
             allowSave = false;
-        }
+             }
+
 
         if (allowSave) {
         //Proceeds with save logic
@@ -144,7 +146,7 @@ public void onClick(View v) {
      }
 }
 
-public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
+ public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
     String imageEncoded = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
@@ -155,6 +157,7 @@ public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
             .child("imageUrl");
     ref.setValue(imageEncoded);
 }
+
 
 public void ResetFields() {
     mNoteBodyET.setText("");
