@@ -2,6 +2,8 @@ package com.example.kaya.connectus2.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.icu.util.GregorianCalendar;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -108,8 +110,17 @@ public boolean onOptionsItemSelected(MenuItem item) {
 
     }
     if (id == R.id.action_calendar) {
-        Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+        Intent calIntent = new Intent(Intent.ACTION_INSERT);
+        calIntent.setData(CalendarContract.Events.CONTENT_URI);
+        calIntent.setType("vnd.android.cursor.item/event");
+        GregorianCalendar calDate = new GregorianCalendar(2012, 7, 15);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                calDate.getTimeInMillis());
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                calDate.getTimeInMillis());
+        startActivity(calIntent);
     }
     if (id == R.id.action_photo) {
         // future development
