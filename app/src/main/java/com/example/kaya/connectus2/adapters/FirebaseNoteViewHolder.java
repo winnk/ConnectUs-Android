@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import com.example.kaya.connectus2.Constants;
@@ -58,8 +59,8 @@ public void bindNote(Note note) {
     noteBody.setText(note.getNote());
     noteTitle.setText(note.getTitle());
   // noteDate.setText(note.getDate());
-
 }
+
 // ADD WHEN CAMERA ADDED
 //public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {
   //  byte[] decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT);
@@ -68,29 +69,29 @@ public void bindNote(Note note) {
 
 @Override
 public void onClick(View view) {
+    Log.d("FBNoteViewHolder", "runs");
     final ArrayList<Note> notes = new ArrayList<>();
 
     //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     // String uid = user.getUid();
 
         DatabaseReference noteRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES);
+        noteRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
-    noteRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    notes.add(snapshot.getValue(Note.class));
+                }
 
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                notes.add(snapshot.getValue(Note.class));
+                int itemPosition = getLayoutPosition();
+
+                Intent intent = new Intent(mContext, SavedNotesListActivity.class);
+                intent.putExtra("position", itemPosition + "");
+                intent.putExtra("notes", Parcels.wrap(notes));
+
+                mContext.startActivity(intent);
             }
-
-            int itemPosition = getLayoutPosition();
-
-            Intent intent = new Intent(mContext, SavedNotesListActivity.class);
-            intent.putExtra("position", itemPosition + "");
-            intent.putExtra("notes", Parcels.wrap(notes));
-
-            mContext.startActivity(intent);
-        }
 
         @Override
         public void onCancelled(DatabaseError databaseError) {

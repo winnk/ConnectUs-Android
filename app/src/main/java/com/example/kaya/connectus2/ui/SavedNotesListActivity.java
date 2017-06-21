@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.kaya.connectus2.Constants;
 import com.example.kaya.connectus2.R;
@@ -19,43 +20,47 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class SavedNotesListActivity extends AppCompatActivity {
-private DatabaseReference mNoteReference;
-private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private DatabaseReference mNoteReference;
+    private FirebaseRecyclerAdapter mFirebaseAdapter;
 
-@Bind(R.id.recyclerView)RecyclerView mRecyclerView;
+    @Bind(R.id.recyclerView)RecyclerView mRecyclerView;
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_notes_list);
-    ButterKnife.bind(this);
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String uid = user.getUid();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("SavedNoteOnCreate", "runs");
 
-    mNoteReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES).child(uid);
-    setUpFirebaseAdapter();
-}
+        setContentView(R.layout.activity_notes_list);
+        ButterKnife.bind(this);
 
-private void setUpFirebaseAdapter() {
-    mFirebaseAdapter = new FirebaseRecyclerAdapter<Note, FirebaseNoteViewHolder>
-            (Note.class, R.layout.notes_list_item, FirebaseNoteViewHolder.class, mNoteReference) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mNoteReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES).child(uid);
+        setUpFirebaseAdapter();
+        //this has child uid inital lesson does not
+    }
+
+    private void setUpFirebaseAdapter() {
+        mFirebaseAdapter = new FirebaseRecyclerAdapter<Note, FirebaseNoteViewHolder>
+                (Note.class, R.layout.notes_list_item, FirebaseNoteViewHolder.class, mNoteReference) {
 
 
-        @Override
-        protected void populateViewHolder(FirebaseNoteViewHolder viewHolder, Note model, int position) {
-            viewHolder.bindNote(model);
-        }
-    };
-    mRecyclerView.setHasFixedSize(true);
-    mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-    mRecyclerView.setAdapter(mFirebaseAdapter);
-}
+            @Override
+            protected void populateViewHolder(FirebaseNoteViewHolder viewHolder, Note model, int position) {
+                viewHolder.bindNote(model);
+            }
+        };
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mFirebaseAdapter);
+    }
 
-@Override
-    protected void onDestroy() {
-        super.onDestroy();
-         mFirebaseAdapter.cleanup();
- }
+    @Override
+        protected void onDestroy() {
+            super.onDestroy();
+             mFirebaseAdapter.cleanup();
+     }
 }
 
 
