@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.kaya.connectus2.Constants;
 import com.example.kaya.connectus2.R;
@@ -51,6 +52,8 @@ public FirebaseNoteViewHolder(View itemView) {
 public void bindNote(Note note) {
     TextView noteBody = (TextView) mView.findViewById(R.id.noteBodyTV);
     TextView noteTitle = (TextView) mView.findViewById(R.id.noteTitleTV);
+    //mNoteImageView = (ImageView) mView.findViewById(R.id.noteImageView);
+
     //TextView noteDate = (TextView) mView.findViewById(R.id.noteDateTV);
 
 // add after notes view working
@@ -72,11 +75,11 @@ public void onClick(View view) {
     Log.d("FBNoteViewHolder", "runs");
     final ArrayList<Note> notes = new ArrayList<>();
 
-    //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    // String uid = user.getUid();
+      FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+      String uid = user.getUid();
+      DatabaseReference noteRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES);
 
-        DatabaseReference noteRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_NOTES);
-        noteRef.addListenerForSingleValueEvent(new ValueEventListener() {
+      noteRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

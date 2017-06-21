@@ -33,7 +33,7 @@ public NoteListAdapter(Context context, ArrayList<Note> notes) {
 
     @Override
     public NoteListAdapter.NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notes_list_item, parent, false);
+    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_notes_list, parent, false);
     NoteViewHolder viewHolder = new NoteViewHolder(view);
         return viewHolder;
     }

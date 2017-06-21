@@ -90,10 +90,11 @@ public void onClick(View v) {
        startActivity(intent);
        }
 
-    if (v ==mPhotoButton){
+    if (v == mPhotoButton){
         Toast.makeText(NotesActivity.this, "clicked",
                 Toast.LENGTH_SHORT).show();
         Log.d("mPhotoButton", "runs");
+        onLaunchCamera();
         }
 
     if (v == mSaveNoteButton) {
@@ -115,12 +116,8 @@ public void onClick(View v) {
             Toast.makeText(NotesActivity.this, errMsg,
                     Toast.LENGTH_SHORT).show();
             allowSave = false;
-        }
+             }
 
-        //  if (v == mPhotoButton){
-        // Log.d("mPhotoButton", "is pressed");
-        //   onLaunchCamera();
-        //  }
 
         if (allowSave) {
         //Proceeds with save logic
@@ -149,7 +146,7 @@ public void onClick(View v) {
      }
 }
 
-/* public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
+ public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
     String imageEncoded = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
@@ -160,7 +157,7 @@ public void onClick(View v) {
             .child("imageUrl");
     ref.setValue(imageEncoded);
 }
-*/
+
 
 public void ResetFields() {
     mNoteBodyET.setText("");

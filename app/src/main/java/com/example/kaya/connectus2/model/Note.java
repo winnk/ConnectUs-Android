@@ -24,8 +24,8 @@ public class Note {
 String date;
 String body;
 String title;
-
 private String pushId;
+String index;
 
 public Note(){}
 
@@ -39,8 +39,7 @@ public Note (String noteBody, String noteTitle){
     String day = cal.get(java.util.Calendar.DAY_OF_MONTH) + "";
     Log.d("MainActivity", "Current Timestamp: " + format);
     this.date = month + " / " +day+ " / " + year;
-
-
+    this.index = "not_specified";
 }
 
 public String getNote() {
@@ -57,11 +56,21 @@ public String getDate() {
 
 public String getPushId(){
     return pushId;
-}// end getters
+}
+
+public String getIndex() {
+        return index;
+    }
+
+// end getters
 
 public void setPushId(String pushId) {
     this.pushId = pushId;
 }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
 
 
 }

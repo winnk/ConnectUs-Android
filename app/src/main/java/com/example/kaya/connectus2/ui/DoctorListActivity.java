@@ -26,7 +26,7 @@ public class DoctorListActivity extends AppCompatActivity {
 
 
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
-private DoctorListAdapter mAdapter;
+    private DoctorListAdapter mAdapter;
 //    private String parentString;
 
     @Override
