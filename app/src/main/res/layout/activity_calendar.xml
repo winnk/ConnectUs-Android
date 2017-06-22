@@ -8,6 +8,14 @@
     android:background="@drawable/gradient"
     tools:context="com.example.kaya.connectus2.ui.CalendarActivity">
 
+    <TextView
+        android:id="@+id/calendarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Appoinetment"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="54dp"/>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="368dp"
         android:layout_height="495dp"
