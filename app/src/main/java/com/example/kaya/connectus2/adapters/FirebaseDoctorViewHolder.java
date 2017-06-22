@@ -48,7 +48,7 @@ public FirebaseDoctorViewHolder(View itemView) {
 
 public void bindDoctor(Doctor doctor) {
     TextView firstNameTV = (TextView) mView.findViewById(R.id.firstNameTV);
-    ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
+    //ImageView doctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
     mDoctorImageView = (ImageView) mView.findViewById(R.id.doctorImageView);
 
     Picasso.with(mContext)
@@ -66,7 +66,7 @@ public void onClick(View view) {
   //  DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS);
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-      String uid = user.getUid();
+    String uid = user.getUid();
     DatabaseReference doctorRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DOCTORS).child(uid);
 
     doctorRef.addListenerForSingleValueEvent(new ValueEventListener() {
