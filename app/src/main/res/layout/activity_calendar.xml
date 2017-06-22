@@ -9,10 +9,10 @@
     tools:context="com.example.kaya.connectus2.ui.CalendarActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/calendarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feature coming soon..."
+        android:text="Set Appoinetment"
         tools:layout_editor_absoluteX="126dp"
         tools:layout_editor_absoluteY="54dp"/>
 </android.support.constraint.ConstraintLayout>
