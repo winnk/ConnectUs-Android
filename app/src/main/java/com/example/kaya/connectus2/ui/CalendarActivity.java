@@ -14,43 +14,65 @@ import com.example.kaya.connectus2.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.CalendarMode;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
  public class CalendarActivity extends AppCompatActivity {
 
-     private  static final String TAG = "CalendarActivity";
-     private CalendarView mCalendarView;
-
-     //private static final String TAG = "CalendarActivity";
-
-     private TextView thedate;
-     private Button btngocalendar;
-
-     // @Bind(R.id.calendarTitleTV)
-     TextView mCalendarTitleTV;
-
+     TextView Day;
+     MaterialCalendarView materialCalendarView;
+     private boolean isClicked = false;
+     Button viewButton,newEvent_button;
 
      @Override
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_calendar);
+         setContentView(R.layout.calender_main);
 
-         ButterKnife.bind(this);
+         Button more = (Button)findViewById(R.id.more_button);
+         newEvent_button = (Button)findViewById(R.id.new_event_button);
+         viewButton = (Button)findViewById(R.id.viewButton);
+         Day = (TextView)findViewById(R.id.text_day);
+         materialCalendarView = (MaterialCalendarView)findViewById(R.id.calendarView);
 
-         //mCalendarTitleTV = (TextView) findViewById(R.id.calendarTitleTV);
-         Typeface vanishFont = Typeface.createFromAsset(getAssets(), "fonts/vanish.ttf");
-        // mCalendarTitleTV.setTypeface(vanishFont);
-
-         mCalendarView = (CalendarView) findViewById(R.id.calendarView);
-         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+         more.setOnClickListener(new View.OnClickListener() {
              @Override
-             public void onSelectedDayChange(CalendarView CalendarView, int year, int month, int dayOfMonth) {
-                 String date = year + "/" + month + "/"+ dayOfMonth ;
-                 Log.d(TAG, "onSelectedDayChange: yyyy/mm/dd:" + date);
-                 Intent intent = new Intent(CalendarActivity.this,MainActivity.class);
-                 intent.putExtra("date",date);
+             public void onClick(View v) {
+
+                 Intent intent = new Intent(CalendarActivity.this, MoreActionAct.class);
+                 startActivity(intent);
+             }
+         });
+
+         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
+             @Override
+             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+
+//                Toast.makeText(CalendarActivity.this,date, Toast.LENGTH_SHORT).show();
+
+                 Intent intent = new Intent(CalendarActivity.this, NewEventAct.class);
                  startActivity(intent);
 
              }
          });
      }
+
+
  }
