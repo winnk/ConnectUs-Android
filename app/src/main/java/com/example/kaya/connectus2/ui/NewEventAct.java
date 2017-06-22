@@ -427,7 +427,7 @@ public class NewEventAct extends AppCompatActivity {
 
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.set(alarmManager.RTC_WAKEUP,cal.getTimeInMillis(),pendingIntent);
-        Toast.makeText(this,"Alarmset",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"AlarmSet",Toast.LENGTH_SHORT).show();
 
     }
 }

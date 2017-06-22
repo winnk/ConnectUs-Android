@@ -37,7 +37,7 @@ protected void onCreate(Bundle savedInstanceState) {
     ButterKnife.bind(this);
 
     mMainTitleTV = (TextView) findViewById(R.id.mainTitleTV);
-    Typeface vanishFont = Typeface.createFromAsset(getAssets(), "fonts/vanish.ttf");
+    Typeface vanishFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
     mMainTitleTV.setTypeface(vanishFont);
 
 
