@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.kaya.connectus2.R;
@@ -19,6 +20,7 @@ import butterknife.ButterKnife;
 
      private  static final String TAG = "CalendarActivity";
      private CalendarView mCalendarView;
+     private DatePicker picker;
 
      //private static final String TAG = "CalendarActivity";
 
