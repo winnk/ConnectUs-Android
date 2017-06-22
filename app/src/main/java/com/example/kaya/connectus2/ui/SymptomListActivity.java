@@ -9,7 +9,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.kaya.connectus2.R;
-import com.example.kaya.connectus2.adapters.SymptomListAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

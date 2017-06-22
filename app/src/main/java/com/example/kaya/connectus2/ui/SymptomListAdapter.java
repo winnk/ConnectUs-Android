@@ -1,4 +1,4 @@
-package com.example.kaya.connectus2.adapters;
+package com.example.kaya.connectus2.ui;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

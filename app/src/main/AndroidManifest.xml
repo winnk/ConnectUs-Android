@@ -26,6 +26,11 @@
         <activity android:name=".ui.NotesActivity">
         </activity>
         <activity android:name=".ui.CalendarActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CALENDAR" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.DoctorListActivity">
         </activity>
@@ -59,6 +64,12 @@
         </activity>
         <activity android:name=".ui.SavedDoctorsListActivity">
         </activity>
+        <activity android:name=".ui.NewEventAct" />
+        <activity android:name=".ui.MoreActionAct" />
+        <activity android:name=".ui.RemainderAct" />
+        <activity android:name=".ui.SettingsAct" />
+        <activity android:name=".ui.TimeZoneAct" />
+
     </application>
 
 </manifest>
